@@ -22,6 +22,7 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+  // tess
   return <Expenses expenses={expenses} />;
 };
 
