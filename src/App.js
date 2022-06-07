@@ -1,4 +1,5 @@
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const App = () => {
   const expenses = [
@@ -22,8 +23,17 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
-  // tess
-  return <Expenses expenses={expenses} />;
+
+  const addExpenseHandler = (expense) => {
+    console.log("app js");
+    console.log(expense);
+  };
+  return (
+    <>
+      <NewExpense getFormExpense={addExpenseHandler} />
+      <Expenses expenses={expenses} />;
+    </>
+  );
 };
 
 export default App;
