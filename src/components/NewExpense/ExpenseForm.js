@@ -8,7 +8,6 @@ const ExpenseForm = (props) => {
 
   const handleTitle = (e) => {
     changeEnteredTitle(e.target.value);
-    console.log(enteredTitle);
   };
   const handleAmount = (e) => {
     changeEnteredAmount(e.target.value);
@@ -18,6 +17,9 @@ const ExpenseForm = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    if ((enteredAmount || enteredDate || enteredTitle) === "" || false) {
+      return;
+    }
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
@@ -57,7 +59,8 @@ const ExpenseForm = (props) => {
             onChange={handleDate}
           />
         </div>
-        <button type="submit">Potwierdz</button>
+        <button onClick={props.formHandler}>Cancel</button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );

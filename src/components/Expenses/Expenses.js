@@ -5,7 +5,7 @@ import "./Expenses.css";
 import Card from "../UI/Card";
 
 const Expenses = (props) => {
-  const [filteredYear, setFilterState] = useState("2020");
+  const [filteredYear, setFilterState] = useState("all-items");
   const liftFilterState = (selectedYear) => {
     setFilterState(selectedYear);
   };
